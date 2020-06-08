@@ -17,27 +17,34 @@ body {
 	display: flex;
 }
 
+.key {
+	font-family: "Courier New", Courier, monospace;
+	display: flex;
+	align-items: flex-end;
+    justify-content: center;
+    font-size: larger;
+}
 
 .white {
-    width: 100px;
-    height: 400px;
+	width: 100px;
+	height: 400px;
 	background-color: white;
 	border: 1px solid black;
 }
 
 .white.active {
-    background-color: #ccc;
+	background-color: rgb(236, 236, 236);
 }
 
 .black {
-    width: 60px;
-    height: 240px;
+	width: 60px;
+	height: 240px;
 	background-color: black;
 	margin: 0 -30px;
 	z-index: 1;
+	color: white;
 }
 
 .black.active {
-    background-color: #333;
+	background-color: rgb(70, 70, 70);
 }
-

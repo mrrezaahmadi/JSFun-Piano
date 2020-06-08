@@ -1,4 +1,4 @@
-const WHITE_KEYS = ["z", "x", "c", "v", "b", "n"];
+const WHITE_KEYS = ["z", "x", "c", "v", "b", "n", "m"];
 const BLACK_KEYS = ["s", "d", "f", "g", "h"];
 
 const whiteKeys = $(".key.white");
@@ -22,7 +22,7 @@ $(this).on("keydown", (e) => {
 
 const playNote = (key) => {
 	const noteAudio = $(`#${key.dataset.note}`);
-	noteAudio.trigger('play').prop('currentTime', 0)
+	noteAudio.trigger("play").prop("currentTime", 0);
 	$(key).addClass("active");
 	noteAudio.on("ended", () => {
 		$(key).removeClass("active");
