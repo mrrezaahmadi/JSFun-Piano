@@ -1,17 +1,16 @@
 const WHITE_KEYS = ["z", "x", "c", "v", "b", "n"];
 const BLACK_KEYS = ["s", "d", "f", "g", "h"];
 
-const keys = document.querySelectorAll(".key");
-const whiteKeys = document.querySelectorAll(".key.white");
-const blackKeys = document.querySelectorAll(".key.black");
+const whiteKeys = $(".key.white");
+const blackKeys = $(".key.black");
 
-keys.forEach((key) => {
-	key.addEventListener("click", () => {
+$(".key").each((index, key) => {
+	$(key).on("click", () => {
 		playNote(key);
 	});
 });
 
-document.addEventListener("keydown", (e) => {
+$(this).on("keydown", (e) => {
 	const key = e.key;
 
 	const whiteKeyIndex = WHITE_KEYS.indexOf(key);
@@ -22,11 +21,10 @@ document.addEventListener("keydown", (e) => {
 });
 
 const playNote = (key) => {
-    const noteAudio = document.getElementById(key.dataset.note);
-    noteAudio.currentTime = 0;
-	noteAudio.play();
-	key.classList.add("active");
-	noteAudio.addEventListener("ended", () => {
-		key.classList.remove("active");
+	const noteAudio = $(`#${key.dataset.note}`);
+	noteAudio.trigger('play').prop('currentTime', 0)
+	$(key).addClass("active");
+	noteAudio.on("ended", () => {
+		$(key).removeClass("active");
 	});
 };
