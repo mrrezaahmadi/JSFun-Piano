@@ -25,11 +25,19 @@ body {
 	border: 1px solid black;
 }
 
+.white.active {
+    background-color: #ccc;
+}
+
 .black {
     width: 60px;
     height: 240px;
 	background-color: black;
 	margin: 0 -30px;
 	z-index: 1;
+}
+
+.black.active {
+    background-color: #333;
 }
 
